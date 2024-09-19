@@ -8,7 +8,7 @@
 
 ## Motivation
 
-We always want to share our chat conversion to others.
+We always want to share our chat conservation to others.
 
 But the official way is not user-friendly.
 
