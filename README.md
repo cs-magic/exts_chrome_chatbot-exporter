@@ -1,4 +1,4 @@
-# Chatbot Exporter
+# Chatbot Exporter (v0.1.0_beta.2_2024-09-19)
 
 ![logo.svg](assets/logo.svg)
 
