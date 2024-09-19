@@ -2,7 +2,7 @@ import { isChatgpt, isClaude } from "./platform";
 
 export const getContentAreaElement = () => {
   if (isClaude())
-    return document.querySelector(".sticky.bottom-0").parentElement
+    return document.querySelector(".sticky.bottom-0")?.parentElement
       .firstElementChild;
 
   if (isChatgpt())

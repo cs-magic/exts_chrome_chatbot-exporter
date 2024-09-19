@@ -88,7 +88,7 @@ const Row = () => {
     const theme = isDark
         ? "bg-gray-800 text-gray-200"
         : "bg-gray-200 text-gray-800";
-    console.log("matchMedia: ", window.matchMedia);
+    // console.log("matchMedia: ", window.matchMedia);
     const S = () => ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_dist_ui_separator__WEBPACK_IMPORTED_MODULE_2__.Separator, { orientation: "horizontal", className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("grow w-auto bg-gray-900 ", theme) }));
     return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", { className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("flex justify-center items-center w-full overflow-hidden gap-2", (0,_utils_platform__WEBPACK_IMPORTED_MODULE_5__.isChatgpt)() && "m-2"), children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", { className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("flex justify-center items-center w-full", (0,_utils_platform__WEBPACK_IMPORTED_MODULE_5__.isChatgpt)() && "md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem]"), children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(S, {}), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_dist_ui_button__WEBPACK_IMPORTED_MODULE_1__.Button, { className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("shrink-0 hover:bg-gray-300 dark:hover:bg-gray-700", theme), onClick: () => {
                         (0,_utils_exportChats__WEBPACK_IMPORTED_MODULE_6__.exportChats)({ isDark });
@@ -166,7 +166,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const getContentAreaElement = () => {
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isClaude)())
-        return document.querySelector(".sticky.bottom-0").parentElement
+        return document.querySelector(".sticky.bottom-0")?.parentElement
             .firstElementChild;
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isChatgpt)())
         return document.querySelector(".composer-parent > :nth-child(1)");

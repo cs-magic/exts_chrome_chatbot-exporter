@@ -12,7 +12,7 @@ export const Row = () => {
     ? "bg-gray-800 text-gray-200"
     : "bg-gray-200 text-gray-800";
 
-  console.log("matchMedia: ", window.matchMedia);
+  // console.log("matchMedia: ", window.matchMedia);
 
   const S = () => (
     <Separator
