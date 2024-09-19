@@ -14,19 +14,28 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - run: npm ci
-      - run: npm run build
-      - name: Set release name
-        id: set_release_name
+      - name: Get package info
+        id: package
         run: |
-          PACKAGE_NAME=$(node -p "require('./manifest.json').name || require('./package.json').name")
-          PACKAGE_VERSION=$(node -p "require('./manifest.json').version || require('./package.json').version")
-          DATE=$(date +'%Y-%m-%d')
-          RELEASE_NAME="${PACKAGE_NAME}_v${PACKAGE_VERSION}_${DATE}"
-          echo "RELEASE_NAME=$RELEASE_NAME" >> $GITHUB_ENV
-          echo "::set-output name=release_name::$RELEASE_NAME"
+          echo "::set-output name=name::$(node -p "require('./package.json').name")"
+          echo "::set-output name=version::$(node -p "require('./package.json').version")"
+      - name: Set release stage
+        id: stage
+        run: |
+          if [[ ${{ github.ref }} == *"-alpha"* ]]; then
+            echo "::set-output name=stage::alpha"
+          elif [[ ${{ github.ref }} == *"-beta"* ]]; then
+            echo "::set-output name=stage::beta"
+          elif [[ ${{ github.ref }} == *"-rc"* ]]; then
+            echo "::set-output name=stage::rc"
+          else
+            echo "::set-output name=stage::stable"
+          fi
+      - name: Set release date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
       - name: Zip Extension
-        run: zip -r "${{ env.RELEASE_NAME }}.zip" dist
+        run: zip -r extension.zip dist
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -34,15 +43,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: ${{ env.RELEASE_NAME }}
+          release_name: ${{ steps.package.outputs.name }}_v${{ steps.package.outputs.version }}_${{ steps.stage.outputs.stage }}_${{ steps.date.outputs.date }}
           draft: false
-          prerelease: false
+          prerelease: ${{ steps.stage.outputs.stage != 'stable' }}
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./${{ env.RELEASE_NAME }}.zip
-          asset_name: ${{ env.RELEASE_NAME }}.zip
+          asset_path: ./extension.zip
+          asset_name: ${{ steps.package.outputs.name }}_v${{ steps.package.outputs.version }}_${{ steps.stage.outputs.stage }}_${{ steps.date.outputs.date }}.zip
           asset_content_type: application/zip
