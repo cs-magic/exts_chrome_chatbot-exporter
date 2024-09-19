@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "./dist"),
-    filename: "[name].[contenthash].js",
+    filename: "[name].js",
     clean: true, // 这会在每次构建前清理输出目录。
   },
   resolve: {
@@ -53,7 +53,7 @@ module.exports = {
         loader: "url-loader",
         options: {
           limit: 8192, // inlines files smaller than 8kb
-          name: "images/[name].[contenthash].[ext]",
+          name: "images/[name].[ext]",
           outputPath: "images/",
         },
       },
@@ -62,7 +62,7 @@ module.exports = {
   plugins: [
     //   CSS 最小化，这个插件用于最小化 CSS 文件。
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: "[name].css",
     }),
     new CopyPlugin({
       patterns: ["assets/*", "manifest.json"],
