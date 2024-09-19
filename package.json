@@ -2,8 +2,8 @@
   "name": "@cs-magic/exts_chrome_chatbot-exporter",
   "packageManager": "yarn@4.4.0",
   "scripts": {
-    "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production"
+    "dev": "webpack --node-env development --watch",
+    "build": "webpack --node-env production"
   },
   "devDependencies": {
     "webpack": "^5.94.0"

@@ -21,21 +21,21 @@ Enjoy it!
 
 ## Release
 
-### V0.1.2.beta.2024-09-19
-- fixed renaming
-- png --> jpeg, for smaller file size
-- fixed claude background
+### v0.1.0_beta.1_2024-09-19
 
-### V0.1.0.beta.2024-09-19
-- init
+- [x] feat: download with history together
+- [x] feat: added CICD for release
+- [x] fixed: naming problem
+- [x] fixed: image quality problem (scale)
+- [x] fixed: claude image dirty transition (after adding backgroundColor)
+- [x] improvement: png --> jpeg, for smaller file size
+
+### v0.1.0_beta.0_2024-09-19
+
+- [x] init
 
 ## Todo
 
-- [ ]: CICD for release
-- [ ]: Claude with graph
-- [ ]: fix ChatGPT UI deficit
-- [ ]: POE / ... (other chatbot like products)
-- [x]: feat: download with history together
-- [x]: naming problem
-- [x]: image quality problem
-- [x]: claude image dirty transition (fixed, after adding backgroundColor)
+- [ ] Claude with graph
+- [ ] fix ChatGPT UI deficit
+- [ ] POE / ... (other chatbot like products)
