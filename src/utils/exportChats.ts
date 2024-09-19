@@ -1,8 +1,8 @@
 import { getContentAreaElement } from "./getContentAreaElement";
-import { element2png } from "@cs-magic/exts_chrome_claude-enhancer/src/utils/element2png";
 import { isChatgpt } from "./platform";
 import { formatToday } from "@cs-magic/common/dist/datetime/format-today";
 import { getConversationName } from "./getConversationName";
+import { element2png } from "@cs-magic/exts_chrome_claude-artifact-enhancer/src/utils/element2png";
 
 export const exportChats = ({ isDark }: { isDark: boolean }) => {
   let targetElement = getContentAreaElement();

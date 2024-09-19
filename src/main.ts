@@ -1,9 +1,9 @@
-import { mountReactApp } from "@cs-magic/exts_chrome_claude-enhancer/src/react/bridge";
 import { Row } from "./react/row";
 
 import "../../../assets/styles/main.css";
 import { getContentAreaElement } from "./utils/getContentAreaElement";
 import { APP_ID } from "./utils/const";
+import { mountReactApp } from "@cs-magic/exts_chrome_claude-artifact-enhancer/src/react/bridge";
 
 // Check for dark mode preference
 if (
