@@ -21,6 +21,8 @@ Enjoy it!
 
 ## Todo
 
+- [ ]: 文件命名问题
+- [ ]: 图片质量问题
 - [ ]: Claude with graph
 - [ ]: fix ChatGPT UI deficit
 - [ ]: POE / ... (other chatbot like products)

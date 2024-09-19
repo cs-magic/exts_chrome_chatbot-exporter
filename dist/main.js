@@ -44242,7 +44242,8 @@ const APP_ID = "chatbot-exporter";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   exportChats: () => (/* binding */ exportChats)
+/* harmony export */   exportChats: () => (/* binding */ exportChats),
+/* harmony export */   getConversationName: () => (/* binding */ getConversationName)
 /* harmony export */ });
 /* harmony import */ var _getContentAreaElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getContentAreaElement */ "./src/utils/getContentAreaElement.ts");
 /* harmony import */ var _cs_magic_exts_chrome_claude_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-enhancer/src/utils/element2png */ "../claude-enhancer/src/utils/element2png.ts");
@@ -44252,13 +44253,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const getConversationName = () => {
+    return document.querySelector("title").textContent;
+};
 const exportChats = ({ isDark }) => {
     let targetElement = (0,_getContentAreaElement__WEBPACK_IMPORTED_MODULE_0__.getContentAreaElement)();
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_2__.isChatgpt)())
         targetElement = targetElement.querySelector(":first-child > :first-child > :first-child > :first-child > :first-child > :first-child");
     void (0,_cs_magic_exts_chrome_claude_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_1__.element2png)(targetElement, {
         approach: (0,_platform__WEBPACK_IMPORTED_MODULE_2__.isChatgpt)() ? "html2canvas" : "modern-screenshot",
-        filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_3__.formatToday)()} - chat - {TITLE}.png`,
+        filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_3__.formatToday)()} - chat - ${getConversationName()}.png`,
         backgroundColor: isDark
             ? "#171717"
             : // "rgb(249, 249, 249)",
