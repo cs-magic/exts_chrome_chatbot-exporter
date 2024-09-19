@@ -1,6 +1,6 @@
 {
   "name": "Chatbot Exporter",
-  "version": "0.1.0.beta.1",
+  "version": "0.2.0",
   "manifest_version": 3,
   "description": "Your Helpful Chatbot Exporter",
   "author": "南川 <mark@cs-magic.com>",

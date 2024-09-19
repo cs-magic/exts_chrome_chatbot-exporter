@@ -8,9 +8,8 @@ export const exportChats = ({ isDark }: { isDark: boolean }) => {
   let targetElement = getContentAreaElement();
   if (isChatgpt())
     targetElement = targetElement.querySelector(
+      // 4个不行，5 个缺头部，6 个比较完整
       ":first-child > :first-child > :first-child > :first-child > :first-child > :first-child",
-      // ":first-child > :first-child > :first-child > :first-child > :first-child",
-      // ":first-child > :first-child > :first-child > :first-child", // 四个不行
     );
 
   void element2png(targetElement as HTMLElement, {

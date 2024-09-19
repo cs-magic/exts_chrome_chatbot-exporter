@@ -21,16 +21,16 @@ Enjoy it!
 
 ## Release
 
-### V0.1.2.2024-09-19:
+### V0.1.2.beta.2024-09-19
 - fixed renaming
 - png --> jpeg, for smaller file size
-- 
-### V0.1.0.2024-09-19:
+- fixed claude background
+
+### V0.1.0.beta.2024-09-19
 - init
 
 ## Todo
 
-- [ ]: claude image dirty transition
 - [ ]: CICD for release
 - [ ]: Claude with graph
 - [ ]: fix ChatGPT UI deficit
@@ -38,3 +38,4 @@ Enjoy it!
 - [x]: feat: download with history together
 - [x]: naming problem
 - [x]: image quality problem
+- [x]: claude image dirty transition (fixed, after adding backgroundColor)

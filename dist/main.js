@@ -44257,7 +44257,9 @@ __webpack_require__.r(__webpack_exports__);
 const exportChats = ({ isDark }) => {
     let targetElement = (0,_getContentAreaElement__WEBPACK_IMPORTED_MODULE_0__.getContentAreaElement)();
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_2__.isChatgpt)())
-        targetElement = targetElement.querySelector(":first-child > :first-child > :first-child > :first-child > :first-child > :first-child");
+        targetElement = targetElement.querySelector(
+        // 4个不行，5 个缺头部，6 个比较完整
+        ":first-child > :first-child > :first-child > :first-child > :first-child > :first-child");
     void (0,_cs_magic_exts_chrome_claude_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_1__.element2png)(targetElement, {
         approach: (0,_platform__WEBPACK_IMPORTED_MODULE_2__.isChatgpt)() ? "html2canvas" : "modern-screenshot",
         filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_3__.formatToday)()} - chat - ${(0,_getConversationName__WEBPACK_IMPORTED_MODULE_4__.getConversationName)()}`,
@@ -44430,6 +44432,7 @@ const element2png = async (element, { approach = "modern-screenshot", filename =
             data = await (0,modern_screenshot__WEBPACK_IMPORTED_MODULE_1__.domToJpeg)(element, {
                 scale: 1,
                 quality: 0.7,
+                backgroundColor: backgroundColor,
             });
             break;
     }
