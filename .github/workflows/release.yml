@@ -31,7 +31,9 @@ jobs:
           echo "name=${{ steps.package_info.outputs.name }}_v${{ steps.package_info.outputs.version }}_${{ steps.package_info.outputs.type }}_$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Zip Extension
-        run: zip -r extension.zip dist
+        run: |
+          mv dist ${{ steps.release_name.outputs.name }}
+          zip -r ${{ steps.release_name.outputs.zip_name }} ${{ steps.release_name.outputs.name }}
 
       - name: Create Release
         id: create_release
