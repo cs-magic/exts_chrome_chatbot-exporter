@@ -21,7 +21,7 @@ jobs:
         id: package_info
         run: |
           echo "name=$(node -p "require('./manifest.json').name")" >> $GITHUB_OUTPUT
-          echo "version=$(node -p "require('./manifest.json').version")" >> $GITHUB_OUTPUT
+          echo "version=$(echo ${{ github.ref }} | sed -E 's/.*v([0-9]+\.[0-9]+\.[0-9]+).*/\1/')" >> $GITHUB_OUTPUT
           RELEASE_TYPE=$(echo ${{ github.ref }} | sed -E 's/.*v[0-9]+\.[0-9]+\.[0-9]+_?(.*)$/\1/')
           echo "type=${RELEASE_TYPE:-stable}" >> $GITHUB_OUTPUT
 
@@ -34,6 +34,7 @@ jobs:
         run: zip -r extension.zip dist
 
       - name: Create Release
+        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
