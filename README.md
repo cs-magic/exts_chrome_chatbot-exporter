@@ -7,8 +7,8 @@
 
 ## Usage
 
-1. **download**: visit [Release Page](https://github.com/cs-magic/exts_chrome_chatbot-exporter/release) and download any `chatbot-exporter_....zip` file
-2. **install**: load the unpacked folder in [Chrome Extensions Page](chrome://extensions)
+1. **download**: visit [Release Page](https://github.com/cs-magic/exts_chrome_chatbot-exporter/release) and download the latest / stable `chatbot-exporter_....zip` file
+2. **install**: visit Chrome Extensions Page (chrome://extensions), enable the development mode, and load the unpacked extension
 3. **run**: visit any chatbot website of the following:
     - [x] https://claude.ai
     - [x] https://chatgpt.com
