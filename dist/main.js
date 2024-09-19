@@ -44242,27 +44242,25 @@ const APP_ID = "chatbot-exporter";
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   exportChats: () => (/* binding */ exportChats),
-/* harmony export */   getConversationName: () => (/* binding */ getConversationName)
+/* harmony export */   exportChats: () => (/* binding */ exportChats)
 /* harmony export */ });
 /* harmony import */ var _getContentAreaElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getContentAreaElement */ "./src/utils/getContentAreaElement.ts");
 /* harmony import */ var _cs_magic_exts_chrome_claude_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-enhancer/src/utils/element2png */ "../claude-enhancer/src/utils/element2png.ts");
 /* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./platform */ "./src/utils/platform.ts");
 /* harmony import */ var _cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/common/dist/datetime/format-today */ "../../packages/common/dist/datetime/format-today.js");
+/* harmony import */ var _getConversationName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./getConversationName */ "./src/utils/getConversationName.ts");
 
 
 
 
-const getConversationName = () => {
-    return document.querySelector("title").textContent;
-};
+
 const exportChats = ({ isDark }) => {
     let targetElement = (0,_getContentAreaElement__WEBPACK_IMPORTED_MODULE_0__.getContentAreaElement)();
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_2__.isChatgpt)())
         targetElement = targetElement.querySelector(":first-child > :first-child > :first-child > :first-child > :first-child > :first-child");
     void (0,_cs_magic_exts_chrome_claude_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_1__.element2png)(targetElement, {
         approach: (0,_platform__WEBPACK_IMPORTED_MODULE_2__.isChatgpt)() ? "html2canvas" : "modern-screenshot",
-        filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_3__.formatToday)()} - chat - ${getConversationName()}.png`,
+        filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_3__.formatToday)()} - chat - ${(0,_getConversationName__WEBPACK_IMPORTED_MODULE_4__.getConversationName)()}`,
         backgroundColor: isDark
             ? "#171717"
             : // "rgb(249, 249, 249)",
@@ -44292,6 +44290,24 @@ const getContentAreaElement = () => {
             .firstElementChild;
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isChatgpt)())
         return document.querySelector(".composer-parent > :nth-child(1)");
+};
+
+
+/***/ }),
+
+/***/ "./src/utils/getConversationName.ts":
+/*!******************************************!*\
+  !*** ./src/utils/getConversationName.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getConversationName: () => (/* binding */ getConversationName)
+/* harmony export */ });
+const getConversationName = () => {
+    return document.querySelector("title").textContent;
 };
 
 
@@ -44370,7 +44386,7 @@ function getMaxWidth() {
     }
     return window.innerWidth; // For smaller screens, use full width
 }
-const element2png = async (element, { approach = "modern-screenshot", filename = "screenshot.png", backgroundColor = "white", }) => {
+const element2png = async (element, { approach = "modern-screenshot", filename = "screenshot", backgroundColor = "white", }) => {
     console.log("-- element2png start");
     let data;
     const maxWidth = getMaxWidth();
@@ -44379,11 +44395,13 @@ const element2png = async (element, { approach = "modern-screenshot", filename =
         case "html2canvas":
             const canvas = await html2canvas__WEBPACK_IMPORTED_MODULE_0___default()(element, {
                 logging: true,
+                allowTaint: true,
                 useCORS: true,
                 // scrollY: -window.scrollY,
                 height: element.scrollHeight,
                 windowHeight: element.scrollHeight,
                 backgroundColor: backgroundColor, // chatgpt (#171717)
+                scale: 2,
             });
             // Crop the canvas if necessary
             // todo: 剪切还有点问题
@@ -44406,10 +44424,13 @@ const element2png = async (element, { approach = "modern-screenshot", filename =
             //   );
             //   data = croppedCanvas.toDataURL("image/png");
             // } else
-            data = canvas.toDataURL("image/png");
+            data = canvas.toDataURL("image/jpeg");
             break;
         case "modern-screenshot":
-            data = await (0,modern_screenshot__WEBPACK_IMPORTED_MODULE_1__.domToPng)(element, {});
+            data = await (0,modern_screenshot__WEBPACK_IMPORTED_MODULE_1__.domToJpeg)(element, {
+                scale: 1,
+                quality: 0.7,
+            });
             break;
     }
     const link = document.createElement("a");

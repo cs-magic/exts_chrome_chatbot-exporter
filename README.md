@@ -19,11 +19,22 @@ providing you with a magic experience.
 
 Enjoy it!
 
+## Release
+
+### V0.1.2.2024-09-19:
+- fixed renaming
+- png --> jpeg, for smaller file size
+- 
+### V0.1.0.2024-09-19:
+- init
+
 ## Todo
 
-- [ ]: 文件命名问题
-- [ ]: 图片质量问题
+- [ ]: claude image dirty transition
+- [ ]: CICD for release
 - [ ]: Claude with graph
 - [ ]: fix ChatGPT UI deficit
 - [ ]: POE / ... (other chatbot like products)
 - [x]: feat: download with history together
+- [x]: naming problem
+- [x]: image quality problem
