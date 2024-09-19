@@ -1,8 +1,8 @@
 
 <div align="center">
-  <img src="./assets/logo.png" alt="logo" width="128" height="128">
+  <img src="./assets/logo.svg" alt="logo" width="128" height="128">
   <h1>Chatbot Exporter</h1>
-  <blockquote>Export/share your favorite chat messages in 1 second. </blockquote>
+  <blockquote>Share your favorite chat messages in 1 second. </blockquote>
 </div>
 
 ## Usage
@@ -19,7 +19,7 @@
 4. **use**:
    1. you should be able to find the **Export** button just on top of the input area, like:
 
-     ![img.png](docs/to download.png)
+     ![img.png](docs/to-download.png)
 
    2. click the `Export` button, you would have a file downloaded into your local `Downloads` folder.
 
