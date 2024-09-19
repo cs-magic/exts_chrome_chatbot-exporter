@@ -25,7 +25,7 @@ jobs:
       - name: Set release name
         id: release_name
         run: |
-          echo "name=${{ steps.package_info.outputs.name }}_v${{ steps.package_info.outputs.version }}_${{ steps.package_info.outputs.type }}_$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+          echo "name=${{ steps.package_info.outputs.name }}_v${{ steps.package_info.outputs.version }}_${{ steps.package_info.outputs.type }}_$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Zip Extension
         run: zip -r extension.zip dist
