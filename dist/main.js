@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _cs_magic_exts_chrome_claude_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-enhancer/src/react/bridge */ 194);
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '@cs-magic/exts_chrome_claude-enhancer/src/react/bridge'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _react_row__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react/row */ 569);
 /* harmony import */ var _assets_styles_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../assets/styles/main.css */ 288);
 /* harmony import */ var _utils_getContentAreaElement__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/getContentAreaElement */ 673);
@@ -49,7 +49,7 @@ const observer = new MutationObserver(async (mutations, observer) => {
     console.log("-- mounting");
     const div = document.createElement("div");
     div.id = _utils_const__WEBPACK_IMPORTED_MODULE_4__.APP_ID;
-    (0,_cs_magic_exts_chrome_claude_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__.mountReactApp)(div, _react_row__WEBPACK_IMPORTED_MODULE_1__.Row);
+    Object(function webpackMissingModule() { var e = new Error("Cannot find module '@cs-magic/exts_chrome_claude-enhancer/src/react/bridge'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(div, _react_row__WEBPACK_IMPORTED_MODULE_1__.Row);
     contentAreaElement.parentElement.insertBefore(
     // why div is ok, but div.firstElementChild is null
     div, contentAreaElement.nextElementSibling);
@@ -124,7 +124,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   exportChats: () => (/* binding */ exportChats)
 /* harmony export */ });
 /* harmony import */ var _getContentAreaElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getContentAreaElement */ 673);
-/* harmony import */ var _cs_magic_exts_chrome_claude_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-enhancer/src/utils/element2png */ 944);
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '@cs-magic/exts_chrome_claude-enhancer/src/utils/element2png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./platform */ 698);
 /* harmony import */ var _cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/common/dist/datetime/format-today */ 273);
 /* harmony import */ var _getConversationName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./getConversationName */ 913);
@@ -139,7 +139,7 @@ const exportChats = ({ isDark }) => {
         targetElement = targetElement.querySelector(
         // 4个不行，5 个缺头部，6 个比较完整
         ":first-child > :first-child > :first-child > :first-child > :first-child > :first-child");
-    void (0,_cs_magic_exts_chrome_claude_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_1__.element2png)(targetElement, {
+    void Object(function webpackMissingModule() { var e = new Error("Cannot find module '@cs-magic/exts_chrome_claude-enhancer/src/utils/element2png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(targetElement, {
         approach: (0,_platform__WEBPACK_IMPORTED_MODULE_2__.isChatgpt)() ? "html2canvas" : "modern-screenshot",
         filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_3__.formatToday)()} - chat - ${(0,_getConversationName__WEBPACK_IMPORTED_MODULE_4__.getConversationName)()}.jpeg`,
         backgroundColor: isDark
@@ -205,117 +205,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const isChatgpt = () => window.origin.includes("chatgpt.com");
 const isClaude = () => window.origin.includes("claude.ai");
-
-
-/***/ }),
-
-/***/ 194:
-/*!***********************************************!*\
-  !*** ../claude-enhancer/src/react/bridge.tsx ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   mountReactApp: () => (/* binding */ mountReactApp)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ 873);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ 41);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const mountReactApp = (container, ReactElement) => {
-    const root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(container);
-    root.render((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)((react__WEBPACK_IMPORTED_MODULE_2___default().StrictMode), { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(ReactElement, {}) }));
-};
-
-
-/***/ }),
-
-/***/ 944:
-/*!***************************************************!*\
-  !*** ../claude-enhancer/src/utils/element2png.ts ***!
-  \***************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   element2png: () => (/* binding */ element2png)
-/* harmony export */ });
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! html2canvas */ 317);
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var modern_screenshot__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! modern-screenshot */ 615);
-
-
-// Function to get the maximum width based on viewport
-function getMaxWidth() {
-    if (window.innerWidth >= 1280) {
-        return 768; // xl:max-w-[48rem]
-    }
-    else if (window.innerWidth >= 1024) {
-        return 640; // lg:max-w-[40rem]
-    }
-    else if (window.innerWidth >= 768) {
-        return 768; // md:max-w-3xl
-    }
-    return window.innerWidth; // For smaller screens, use full width
-}
-const element2png = async (element, { approach = "modern-screenshot", filename = "screenshot", backgroundColor = "white", }) => {
-    console.log("-- element2png start");
-    let data;
-    const maxWidth = getMaxWidth();
-    // 此时可以进行截图操作
-    switch (approach) {
-        case "html2canvas":
-            const canvas = await html2canvas__WEBPACK_IMPORTED_MODULE_0___default()(element, {
-                logging: true,
-                allowTaint: true,
-                useCORS: true,
-                // scrollY: -window.scrollY,
-                height: element.scrollHeight,
-                windowHeight: element.scrollHeight,
-                backgroundColor: backgroundColor, // chatgpt (#171717)
-                scale: 2,
-            });
-            // Crop the canvas if necessary
-            // todo: 剪切还有点问题
-            // if (canvas.width > maxWidth) {
-            //   const croppedCanvas = document.createElement("canvas");
-            //   croppedCanvas.width = maxWidth;
-            //   croppedCanvas.height = canvas.height;
-            //   const ctx = croppedCanvas.getContext("2d");
-            //   const centerShift = (canvas.width - maxWidth) / 2;
-            //   ctx.drawImage(
-            //     canvas,
-            //     centerShift,
-            //     0,
-            //     maxWidth,
-            //     canvas.height,
-            //     0,
-            //     0,
-            //     maxWidth,
-            //     canvas.height,
-            //   );
-            //   data = croppedCanvas.toDataURL("image/png");
-            // } else
-            data = canvas.toDataURL("image/jpeg");
-            break;
-        case "modern-screenshot":
-            data = await (0,modern_screenshot__WEBPACK_IMPORTED_MODULE_1__.domToJpeg)(element, {
-                scale: 1,
-                quality: 0.7,
-                backgroundColor: backgroundColor,
-            });
-            break;
-    }
-    const link = document.createElement("a");
-    link.download = filename;
-    link.href = data;
-    link.click();
-    console.log("-- element2png end");
-};
 
 
 /***/ }),
