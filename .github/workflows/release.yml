@@ -14,38 +14,32 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Get package info
-        id: package
+      - name: Get package info and release type
+        id: package_info
         run: |
-          echo "::set-output name=name::$(node -p "require('./package.json').name")"
-          echo "::set-output name=version::$(node -p "require('./package.json').version")"
-      - name: Set release stage
-        id: stage
+          echo "name=$(node -p "require('./package.json').name")" >> $GITHUB_OUTPUT
+          echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+          RELEASE_TYPE=$(echo ${{ github.ref }} | sed -E 's/.*v[0-9]+\.[0-9]+\.[0-9]+_?(.*)$/\1/')
+          echo "type=${RELEASE_TYPE:-stable}" >> $GITHUB_OUTPUT
+
+      - name: Set release name
+        id: release_name
         run: |
-          if [[ ${{ github.ref }} == *"-alpha"* ]]; then
-            echo "::set-output name=stage::alpha"
-          elif [[ ${{ github.ref }} == *"-beta"* ]]; then
-            echo "::set-output name=stage::beta"
-          elif [[ ${{ github.ref }} == *"-rc"* ]]; then
-            echo "::set-output name=stage::rc"
-          else
-            echo "::set-output name=stage::stable"
-          fi
-      - name: Set release date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d')"
+          echo "name=${{ steps.package_info.outputs.name }}_v${{ steps.package_info.outputs.version }}_${{ steps.package_info.outputs.type }}_$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+
       - name: Zip Extension
         run: zip -r extension.zip dist
+
       - name: Create Release
-        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: ${{ steps.package.outputs.name }}_v${{ steps.package.outputs.version }}_${{ steps.stage.outputs.stage }}_${{ steps.date.outputs.date }}
+          release_name: ${{ steps.release_name.outputs.name }}
           draft: false
-          prerelease: ${{ steps.stage.outputs.stage != 'stable' }}
+          prerelease: ${{ steps.package_info.outputs.type != 'stable' }}
+
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
@@ -53,5 +47,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./extension.zip
-          asset_name: ${{ steps.package.outputs.name }}_v${{ steps.package.outputs.version }}_${{ steps.stage.outputs.stage }}_${{ steps.date.outputs.date }}.zip
+          asset_name: ${{ steps.release_name.outputs.name }}.zip
           asset_content_type: application/zip
