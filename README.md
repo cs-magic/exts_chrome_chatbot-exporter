@@ -1,8 +1,9 @@
-# Chatbot Exporter (v0.1.0_beta.2_2024-09-19)
 
-> Your Helpful Chatbot Exporter, which can save your day for exporting/sharing your favorite chat messages.
-
-![logo.svg](assets/logo.svg)
+<div align="center">
+  <img src="./assets/logo.png" alt="logo" width="128" height="128">
+  <h1>Chatbot Exporter</h1>
+  <blockquote>Export/share your favorite chat messages in 1 second. </blockquote>
+</div>
 
 ## Usage
 
