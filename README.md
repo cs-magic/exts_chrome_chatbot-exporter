@@ -6,6 +6,24 @@
 
 ![img.png](docs/img.png)
 
+## Usage
+
+1. **download**: visit [Release Page](./release) and download any `chatbot-exporter_....zip` file
+2. **install**: load the unpacked folder in [Chrome Extensions Page](chrome://extensions)
+3. **run**: visit any chatbot website of the following:
+    - [x] https://claude.ai
+    - [x] https://chatgpt.com
+    - [ ] https://poe.com
+    - [ ] https://monica.im
+    - [ ] https://doubao.com
+    - [ ] ... (please issue if you have chatbot website to be supported)
+4. **use**: 
+
+4.1. you should be able to find the **Export** button just on top of the input area, like:
+![img.png](docs/out chatbot exporter is here.png)
+4.2. click the `Export` button, you would have a file downloaded into your local `Downloads` folder.
+
+
 ## Motivation
 
 We always want to share our chat conservation to others.
@@ -20,6 +38,10 @@ providing you with a magic experience.
 Enjoy it!
 
 ## Release
+
+### v0.1.0_beta.2_2024-09-19
+
+- [x] fixed: theme switch
 
 ### v0.1.0_beta.1_2024-09-19
 
@@ -36,6 +58,7 @@ Enjoy it!
 
 ## Todo
 
-- [ ] Claude with graph
-- [ ] fix ChatGPT UI deficit
-- [ ] POE / ... (other chatbot like products)
+- [ ] feat: Claude with graph
+- [ ] feat: other chatbots, e.g. POE
+- [ ] fix: ChatGPT UI deficit
+- [ ] engineering: CICD with yarn build

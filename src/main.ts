@@ -5,6 +5,17 @@ import "../../../assets/styles/main.css";
 import { getContentAreaElement } from "./utils/getContentAreaElement";
 import { APP_ID } from "./utils/const";
 
+// Check for dark mode preference
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  document.documentElement.classList.add("dark");
+} else {
+  document.documentElement.classList.remove("dark");
+}
+
 const observer = new MutationObserver(async (mutations, observer) => {
   const contentAreaElement = getContentAreaElement();
   if (!contentAreaElement) return;

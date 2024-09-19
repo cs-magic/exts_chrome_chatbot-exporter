@@ -14,7 +14,7 @@ export const exportChats = ({ isDark }: { isDark: boolean }) => {
 
   void element2png(targetElement as HTMLElement, {
     approach: isChatgpt() ? "html2canvas" : "modern-screenshot",
-    filename: `${formatToday()} - chat - ${getConversationName()}`,
+    filename: `${formatToday()} - chat - ${getConversationName()}.jpeg`,
     backgroundColor: isDark
       ? "#171717"
       : // "rgb(249, 249, 249)",

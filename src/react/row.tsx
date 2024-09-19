@@ -4,6 +4,7 @@ import { cn } from "@cs-magic/shadcn/dist/lib/utils";
 import { useDarkMode } from "@cs-magic/react/dist/hooks/use-dark-mode";
 import { isChatgpt } from "../utils/platform";
 import { exportChats } from "../utils/exportChats";
+import React from "react";
 
 export const Row = () => {
   const isDark = useDarkMode();
@@ -35,7 +36,10 @@ export const Row = () => {
       >
         <S />
         <Button
-          className={cn("shrink-0", theme)}
+          className={cn(
+            "shrink-0 hover:bg-gray-300 dark:hover:bg-gray-700",
+            theme,
+          )}
           onClick={() => {
             exportChats({ isDark });
           }}
