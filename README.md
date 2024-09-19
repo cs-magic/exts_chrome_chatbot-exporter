@@ -6,7 +6,7 @@
 
 ## Usage
 
-1. **download**: visit [Release Page](/release) and download any `chatbot-exporter_....zip` file
+1. **download**: visit [Release Page](https://github.com/cs-magic/exts_chrome_chatbot-exporter/release) and download any `chatbot-exporter_....zip` file
 2. **install**: load the unpacked folder in [Chrome Extensions Page](chrome://extensions)
 3. **run**: visit any chatbot website of the following:
     - [x] https://claude.ai
@@ -18,11 +18,11 @@
 4. **use**:
    1. you should be able to find the **Export** button just on top of the input area, like:
 
-   ![img.png](docs/to download.png)
+     ![img.png](docs/to download.png)
 
    2. click the `Export` button, you would have a file downloaded into your local `Downloads` folder.
 
-   ![img.png](docs/downloaded.png)
+     ![img.png](docs/downloaded.png)
 
 ## Motivation
 
