@@ -1,10 +1,10 @@
 import { isChatgpt, isClaude } from "./platform";
 
-export const getContentAreaElement = () => {
+export const getInputAreaElement = () => {
   if (isClaude())
-    return document.querySelector(".sticky.bottom-0")?.parentElement
-      .firstElementChild;
+    // .parentElement.firstElementChild 在初始化问题页的时候有 bug
+    return document.querySelector(".sticky.bottom-0");
 
   if (isChatgpt())
-    return document.querySelector(".composer-parent > :nth-child(1)");
+    return document.querySelector(".composer-parent")?.lastElementChild;
 };

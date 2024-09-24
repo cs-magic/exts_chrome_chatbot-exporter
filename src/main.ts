@@ -1,9 +1,9 @@
+import { mountReactApp } from "@cs-magic/exts_chrome_claude-artifact-enhancer/src/react/bridge"; // Check for dark mode preference
 import { Row } from "./react/row";
 
 import "../../../assets/styles/main.css";
-import { getContentAreaElement } from "./utils/getContentAreaElement";
-import { APP_ID } from "./utils/const";
-import { mountReactApp } from "@cs-magic/exts_chrome_claude-artifact-enhancer/src/react/bridge";
+import { CHATBOT_EXPORTER_APP_ID } from "./utils/const";
+import { getInputAreaElement } from "./utils/getContentAreaElement";
 
 // Check for dark mode preference
 if (
@@ -17,23 +17,26 @@ if (
 }
 
 const observer = new MutationObserver(async (mutations, observer) => {
-  const contentAreaElement = getContentAreaElement();
-  if (!contentAreaElement) return;
+  const inputAreaElement = getInputAreaElement();
+  if (!inputAreaElement) return;
 
-  const app = document.querySelector(`#${APP_ID}`);
-  if (app) return;
+  const app = document.querySelector(`#${CHATBOT_EXPORTER_APP_ID}`);
+  if (!app) {
+    console.log("-- mounting");
 
-  console.log("-- mounting");
+    const div = document.createElement("div");
+    div.id = CHATBOT_EXPORTER_APP_ID;
 
-  const div = document.createElement("div");
-  div.id = APP_ID;
+    mountReactApp(div, Row);
 
-  mountReactApp(div, Row);
-
-  contentAreaElement.parentElement.insertBefore(
-    // why div is ok, but div.firstElementChild is null
-    div,
-    contentAreaElement.nextElementSibling,
-  );
+    inputAreaElement.parentElement.insertBefore(
+      // why div is ok, but div.firstElementChild is null
+      div,
+      inputAreaElement,
+    );
+  } else if (app.nextElementSibling !== inputAreaElement) {
+    console.log("-- re-mounting");
+    app.remove();
+  }
 });
 observer.observe(document.body, { subtree: true, childList: true });

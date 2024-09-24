@@ -20,12 +20,12 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _react_row__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./react/row */ 569);
-/* harmony import */ var _assets_styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../assets/styles/main.css */ 288);
-/* harmony import */ var _utils_getContentAreaElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/getContentAreaElement */ 673);
+/* harmony import */ var _cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-artifact-enhancer/src/react/bridge */ 559);
+/* harmony import */ var _react_row__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react/row */ 569);
+/* harmony import */ var _assets_styles_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../assets/styles/main.css */ 288);
 /* harmony import */ var _utils_const__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/const */ 498);
-/* harmony import */ var _cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-artifact-enhancer/src/react/bridge */ 559);
-
+/* harmony import */ var _utils_getContentAreaElement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/getContentAreaElement */ 673);
+ // Check for dark mode preference
 
 
 
@@ -40,19 +40,23 @@ else {
     document.documentElement.classList.remove("dark");
 }
 const observer = new MutationObserver(async (mutations, observer) => {
-    const contentAreaElement = (0,_utils_getContentAreaElement__WEBPACK_IMPORTED_MODULE_2__.getContentAreaElement)();
-    if (!contentAreaElement)
+    const inputAreaElement = (0,_utils_getContentAreaElement__WEBPACK_IMPORTED_MODULE_4__.getInputAreaElement)();
+    if (!inputAreaElement)
         return;
-    const app = document.querySelector(`#${_utils_const__WEBPACK_IMPORTED_MODULE_3__.APP_ID}`);
-    if (app)
-        return;
-    console.log("-- mounting");
-    const div = document.createElement("div");
-    div.id = _utils_const__WEBPACK_IMPORTED_MODULE_3__.APP_ID;
-    (0,_cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_4__.mountReactApp)(div, _react_row__WEBPACK_IMPORTED_MODULE_0__.Row);
-    contentAreaElement.parentElement.insertBefore(
-    // why div is ok, but div.firstElementChild is null
-    div, contentAreaElement.nextElementSibling);
+    const app = document.querySelector(`#${_utils_const__WEBPACK_IMPORTED_MODULE_3__.CHATBOT_EXPORTER_APP_ID}`);
+    if (!app) {
+        console.log("-- mounting");
+        const div = document.createElement("div");
+        div.id = _utils_const__WEBPACK_IMPORTED_MODULE_3__.CHATBOT_EXPORTER_APP_ID;
+        (0,_cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__.mountReactApp)(div, _react_row__WEBPACK_IMPORTED_MODULE_1__.Row);
+        inputAreaElement.parentElement.insertBefore(
+        // why div is ok, but div.firstElementChild is null
+        div, inputAreaElement);
+    }
+    else if (app.nextElementSibling !== inputAreaElement) {
+        console.log("-- re-mounting");
+        app.remove();
+    }
 });
 observer.observe(document.body, { subtree: true, childList: true });
 
@@ -106,9 +110,9 @@ const Row = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   APP_ID: () => (/* binding */ APP_ID)
+/* harmony export */   CHATBOT_EXPORTER_APP_ID: () => (/* binding */ CHATBOT_EXPORTER_APP_ID)
 /* harmony export */ });
-const APP_ID = "chatbot-exporter";
+const CHATBOT_EXPORTER_APP_ID = "chatbot-exporter";
 
 
 /***/ }),
@@ -123,29 +127,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   exportChats: () => (/* binding */ exportChats)
 /* harmony export */ });
-/* harmony import */ var _getContentAreaElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getContentAreaElement */ 673);
-/* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./platform */ 698);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const */ 498);
+/* harmony import */ var _cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/common-frontend/element2image */ 589);
 /* harmony import */ var _cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/common/dist/datetime/format-today */ 273);
 /* harmony import */ var _getConversationName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getConversationName */ 913);
-/* harmony import */ var _cs_magic_exts_chrome_claude_artifact_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-artifact-enhancer/src/utils/element2png */ 685);
+/* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./platform */ 698);
 
 
 
 
 
 const exportChats = ({ isDark }) => {
-    let targetElement = (0,_getContentAreaElement__WEBPACK_IMPORTED_MODULE_0__.getContentAreaElement)();
-    if ((0,_platform__WEBPACK_IMPORTED_MODULE_1__.isChatgpt)())
+    let targetElement = document.querySelector(`#${_const__WEBPACK_IMPORTED_MODULE_0__.CHATBOT_EXPORTER_APP_ID}`).previousElementSibling;
+    if ((0,_platform__WEBPACK_IMPORTED_MODULE_4__.isChatgpt)())
         targetElement = targetElement.querySelector(
         // 4个不行，5 个缺头部，6 个比较完整
         ":first-child > :first-child > :first-child > :first-child > :first-child > :first-child");
-    void (0,_cs_magic_exts_chrome_claude_artifact_enhancer_src_utils_element2png__WEBPACK_IMPORTED_MODULE_4__.element2png)(targetElement, {
-        approach: (0,_platform__WEBPACK_IMPORTED_MODULE_1__.isChatgpt)() ? "html2canvas" : "modern-screenshot",
+    void (0,_cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__.element2image)(targetElement, {
+        approach: (0,_platform__WEBPACK_IMPORTED_MODULE_4__.isChatgpt)() ? "html2canvas" : "modern-screenshot",
         filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__.formatToday)()} - chat - ${(0,_getConversationName__WEBPACK_IMPORTED_MODULE_3__.getConversationName)()}.jpeg`,
         backgroundColor: isDark
-            ? "#171717"
-            : // "rgb(249, 249, 249)",
-                "white",
+            ? "#171717" // "rgb(249, 249, 249)",
+            : "white",
     });
 };
 
@@ -160,16 +163,16 @@ const exportChats = ({ isDark }) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getContentAreaElement: () => (/* binding */ getContentAreaElement)
+/* harmony export */   getInputAreaElement: () => (/* binding */ getInputAreaElement)
 /* harmony export */ });
 /* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./platform */ 698);
 
-const getContentAreaElement = () => {
+const getInputAreaElement = () => {
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isClaude)())
-        return document.querySelector(".sticky.bottom-0")?.parentElement
-            .firstElementChild;
+        // .parentElement.firstElementChild 在初始化问题页的时候有 bug
+        return document.querySelector(".sticky.bottom-0");
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isChatgpt)())
-        return document.querySelector(".composer-parent > :nth-child(1)");
+        return document.querySelector(".composer-parent")?.lastElementChild;
 };
 
 
@@ -234,21 +237,23 @@ const mountReactApp = (container, ReactElement) => {
 
 /***/ }),
 
-/***/ 685:
+/***/ 589:
 /*!************************************************************!*\
-  !*** ../claude-artifact-enhancer/src/utils/element2png.ts ***!
+  !*** ../../packages_frontend/common/dist/element2image.js ***!
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   element2png: () => (/* binding */ element2png)
+/* harmony export */   element2image: () => (/* binding */ element2image),
+/* harmony export */   svgElement2svgString: () => (/* binding */ svgElement2svgString)
 /* harmony export */ });
 /* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! html2canvas */ 317);
 /* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var modern_screenshot__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! modern-screenshot */ 615);
 
-
+ // Function to get the maximum width based on viewport
+const svgElement2svgString = (svg) => new XMLSerializer().serializeToString(svg);
 // Function to get the maximum width based on viewport
 function getMaxWidth() {
     if (window.innerWidth >= 1280) {
@@ -262,7 +267,7 @@ function getMaxWidth() {
     }
     return window.innerWidth; // For smaller screens, use full width
 }
-const element2png = async (element, { approach = "modern-screenshot", filename = "screenshot", backgroundColor = "white", }) => {
+const element2image = async (element, { approach = "modern-screenshot", filename = "screenshot", backgroundColor = "white", format = "jpeg", }) => {
     console.log("-- element2png start");
     let data;
     const maxWidth = getMaxWidth();
@@ -272,8 +277,7 @@ const element2png = async (element, { approach = "modern-screenshot", filename =
             const canvas = await html2canvas__WEBPACK_IMPORTED_MODULE_0___default()(element, {
                 logging: true,
                 allowTaint: true,
-                useCORS: true,
-                // scrollY: -window.scrollY,
+                useCORS: true, // scrollY: -window.scrollY,
                 height: element.scrollHeight,
                 windowHeight: element.scrollHeight,
                 backgroundColor: backgroundColor, // chatgpt (#171717)
@@ -303,7 +307,7 @@ const element2png = async (element, { approach = "modern-screenshot", filename =
             data = canvas.toDataURL("image/jpeg");
             break;
         case "modern-screenshot":
-            data = await (0,modern_screenshot__WEBPACK_IMPORTED_MODULE_1__.domToJpeg)(element, {
+            data = await (0,modern_screenshot__WEBPACK_IMPORTED_MODULE_1__.domToDataUrl)(element, {
                 scale: 1,
                 quality: 0.7,
                 backgroundColor: backgroundColor,
@@ -316,7 +320,7 @@ const element2png = async (element, { approach = "modern-screenshot", filename =
     link.click();
     console.log("-- element2png end");
 };
-
+//# sourceMappingURL=element2image.js.map
 
 /***/ }),
 
