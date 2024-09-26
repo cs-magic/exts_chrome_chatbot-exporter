@@ -308,7 +308,7 @@ const element2image = async (element, { approach = "modern-screenshot", filename
             break;
         case "modern-screenshot":
             data = await (0,modern_screenshot__WEBPACK_IMPORTED_MODULE_1__.domToDataUrl)(element, {
-                scale: 1,
+                scale: 2,
                 quality: 0.7,
                 backgroundColor: backgroundColor,
             });
