@@ -40,6 +40,10 @@ Enjoy it!
 
 ## Release
 
+### v0.2.1_beta_2024-09-26
+
+- 限制了程序运行的范围，避免了 github 上 `profile-generator` 的显示问题（可能是 observe 导致的）
+
 ### v0.2.0_beta_2024-09-24
 
 - 修复了新建会话时下载按钮处于页面顶部导致下载失败的问题
