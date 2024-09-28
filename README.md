@@ -17,9 +17,9 @@
     - [ ] https://doubao.com
     - [ ] ... (please issue if you have chatbot website to be supported)
 4. **use**:
-   1. you should be able to find the **Export** button just on top of the input area, like:
+   1. you should be able to find the **Export** button just on the middle right of page, like:
 
-     ![img.png](docs/to-download.png)
+     ![img.png](docs/button-v2.png)
 
    2. click the `Export` button, you would have a file downloaded into your local `Downloads` folder.
 
