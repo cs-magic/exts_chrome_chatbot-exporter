@@ -3,7 +3,7 @@ import { Row } from "./react/row";
 
 import "../../../assets/styles/main.css";
 import { CHATBOT_EXPORTER_APP_ID } from "./utils/const";
-import { getInputAreaElement } from "./utils/getContentAreaElement";
+import { getInputAreaElement } from "./utils/get-input-area-element";
 
 // Check for dark mode preference
 if (

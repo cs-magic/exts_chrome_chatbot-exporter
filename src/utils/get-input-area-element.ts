@@ -1,4 +1,4 @@
-import { isChatgpt, isClaude } from "./platform";
+import { isChatgpt, isClaude, isPerplexityAI } from "./platform";
 
 export const getInputAreaElement = () => {
   if (isClaude())
@@ -7,4 +7,7 @@ export const getInputAreaElement = () => {
 
   if (isChatgpt())
     return document.querySelector(".composer-parent")?.lastElementChild;
+
+  if (isPerplexityAI())
+    return document.querySelector(".bottom-mobileNavHeight");
 };

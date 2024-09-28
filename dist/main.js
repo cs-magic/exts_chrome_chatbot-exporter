@@ -24,7 +24,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _react_row__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react/row */ 569);
 /* harmony import */ var _assets_styles_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../assets/styles/main.css */ 288);
 /* harmony import */ var _utils_const__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/const */ 498);
-/* harmony import */ var _utils_getContentAreaElement__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/getContentAreaElement */ 673);
+/* harmony import */ var _utils_get_input_area_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/get-input-area-element */ 33);
  // Check for dark mode preference
 
 
@@ -40,7 +40,7 @@ else {
     document.documentElement.classList.remove("dark");
 }
 const observer = new MutationObserver(async (mutations, observer) => {
-    const inputAreaElement = (0,_utils_getContentAreaElement__WEBPACK_IMPORTED_MODULE_4__.getInputAreaElement)();
+    const inputAreaElement = (0,_utils_get_input_area_element__WEBPACK_IMPORTED_MODULE_4__.getInputAreaElement)();
     if (!inputAreaElement)
         return;
     const app = document.querySelector(`#${_utils_const__WEBPACK_IMPORTED_MODULE_3__.CHATBOT_EXPORTER_APP_ID}`);
@@ -155,10 +155,10 @@ const exportChats = ({ isDark }) => {
 
 /***/ }),
 
-/***/ 673:
-/*!********************************************!*\
-  !*** ./src/utils/getContentAreaElement.ts ***!
-  \********************************************/
+/***/ 33:
+/*!*********************************************!*\
+  !*** ./src/utils/get-input-area-element.ts ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -173,6 +173,8 @@ const getInputAreaElement = () => {
         return document.querySelector(".sticky.bottom-0");
     if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isChatgpt)())
         return document.querySelector(".composer-parent")?.lastElementChild;
+    if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isPerplexityAI)())
+        return document.querySelector(".bottom-mobileNavHeight");
 };
 
 
@@ -204,10 +206,12 @@ const getConversationName = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   isChatgpt: () => (/* binding */ isChatgpt),
-/* harmony export */   isClaude: () => (/* binding */ isClaude)
+/* harmony export */   isClaude: () => (/* binding */ isClaude),
+/* harmony export */   isPerplexityAI: () => (/* binding */ isPerplexityAI)
 /* harmony export */ });
 const isChatgpt = () => window.origin.includes("chatgpt.com");
 const isClaude = () => window.origin.includes("claude.ai");
+const isPerplexityAI = () => window.origin.includes("perplexity.ai");
 
 
 /***/ }),
