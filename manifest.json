@@ -1,6 +1,6 @@
 {
   "name": "chatbot-exporter",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "manifest_version": 3,
   "description": "Your Helpful Chatbot Exporter",
   "author": "南川 <mark@cs-magic.com>",
@@ -9,15 +9,14 @@
     "48": "assets/logo.png",
     "128": "assets/logo.png"
   },
-
-
-
   "content_scripts": [
     {
       "matches": [
         "https://claude.ai/chat/*",
         "https://chatgpt.com/c/*",
-        "https://www.perplexity.ai/search/*"
+        "https://www.perplexity.ai/search/*",
+        "https://metaso.cn/search/*",
+        "https://yuewen.cn/chats/*"
       ],
       "js": [
         "main.js",

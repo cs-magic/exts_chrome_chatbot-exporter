@@ -21,82 +21,48 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-artifact-enhancer/src/react/bridge */ 559);
-/* harmony import */ var _react_row__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react/row */ 569);
+/* harmony import */ var _react_entry__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react/entry */ 229);
 /* harmony import */ var _assets_styles_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../assets/styles/main.css */ 288);
-/* harmony import */ var _utils_const__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/const */ 498);
-/* harmony import */ var _utils_get_input_area_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/get-input-area-element */ 33);
  // Check for dark mode preference
 
 
-
-
-// Check for dark mode preference
-if (localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-    document.documentElement.classList.add("dark");
-}
-else {
-    document.documentElement.classList.remove("dark");
-}
-const observer = new MutationObserver(async (mutations, observer) => {
-    const inputAreaElement = (0,_utils_get_input_area_element__WEBPACK_IMPORTED_MODULE_4__.getInputAreaElement)();
-    if (!inputAreaElement)
-        return;
-    const app = document.querySelector(`#${_utils_const__WEBPACK_IMPORTED_MODULE_3__.CHATBOT_EXPORTER_APP_ID}`);
-    if (!app) {
-        console.log("-- mounting");
-        const div = document.createElement("div");
-        div.id = _utils_const__WEBPACK_IMPORTED_MODULE_3__.CHATBOT_EXPORTER_APP_ID;
-        (0,_cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__.mountReactApp)(div, _react_row__WEBPACK_IMPORTED_MODULE_1__.Row);
-        inputAreaElement.parentElement.insertBefore(
-        // why div is ok, but div.firstElementChild is null
-        div, inputAreaElement);
-    }
-    else if (app.nextElementSibling !== inputAreaElement) {
-        console.log("-- re-mounting");
-        app.remove();
-    }
-});
-observer.observe(document.body, { subtree: true, childList: true });
+const element = document.createElement("div");
+document.body.appendChild(element);
+(0,_cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__.mountReactApp)(element, _react_entry__WEBPACK_IMPORTED_MODULE_1__.Entry);
 
 
 /***/ }),
 
-/***/ 569:
-/*!***************************!*\
-  !*** ./src/react/row.tsx ***!
-  \***************************/
+/***/ 229:
+/*!*****************************!*\
+  !*** ./src/react/entry.tsx ***!
+  \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Row: () => (/* binding */ Row)
+/* harmony export */   Entry: () => (/* binding */ Entry)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
-/* harmony import */ var _cs_magic_shadcn_dist_ui_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/shadcn/dist/ui/button */ 315);
-/* harmony import */ var _cs_magic_shadcn_dist_ui_separator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/shadcn/dist/ui/separator */ 44);
-/* harmony import */ var _cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/shadcn/dist/lib/utils */ 422);
-/* harmony import */ var _cs_magic_react_dist_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @cs-magic/react/dist/hooks/use-dark-mode */ 829);
-/* harmony import */ var _utils_platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/platform */ 698);
-/* harmony import */ var _utils_exportChats__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/exportChats */ 376);
+/* harmony import */ var _cs_magic_react_dist_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/react/dist/hooks/use-dark-mode */ 829);
+/* harmony import */ var _cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/shadcn/dist/lib/utils */ 422);
+/* harmony import */ var _cs_magic_shadcn_dist_ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/shadcn/dist/ui/button */ 315);
+/* harmony import */ var _cs_magic_shadcn_dist_ui_separator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @cs-magic/shadcn/dist/ui/separator */ 44);
+/* harmony import */ var _utils_exportChats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/exportChats */ 376);
 
 
 
 
 
 
-
-const Row = () => {
-    const isDark = (0,_cs_magic_react_dist_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_4__.useDarkMode)();
+const Entry = () => {
+    const isDark = (0,_cs_magic_react_dist_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_1__.useDarkMode)();
     const theme = isDark
         ? "bg-gray-800 text-gray-200"
         : "bg-gray-200 text-gray-800";
     // console.log("matchMedia: ", window.matchMedia);
-    const S = () => ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_dist_ui_separator__WEBPACK_IMPORTED_MODULE_2__.Separator, { orientation: "horizontal", className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("grow w-auto bg-gray-900 ", theme) }));
-    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", { className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("flex justify-center items-center w-full overflow-hidden gap-2", (0,_utils_platform__WEBPACK_IMPORTED_MODULE_5__.isChatgpt)() && "m-2"), children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", { className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("flex justify-center items-center w-full", (0,_utils_platform__WEBPACK_IMPORTED_MODULE_5__.isChatgpt)() && "md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem]"), children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(S, {}), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_dist_ui_button__WEBPACK_IMPORTED_MODULE_1__.Button, { className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_3__.cn)("shrink-0 hover:bg-gray-300 dark:hover:bg-gray-700", theme), onClick: () => {
-                        (0,_utils_exportChats__WEBPACK_IMPORTED_MODULE_6__.exportChats)({ isDark });
-                    }, children: "Export" }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(S, {})] }) }));
+    const S = () => ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_dist_ui_separator__WEBPACK_IMPORTED_MODULE_4__.Separator, { orientation: "horizontal", className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_2__.cn)("grow w-auto bg-gray-900 ", theme) }));
+    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_dist_ui_button__WEBPACK_IMPORTED_MODULE_3__.Button, { onClick: _utils_exportChats__WEBPACK_IMPORTED_MODULE_5__.exportChats, className: "fixed bottom-1/2 right-2 sm:right-4", children: "Export" }));
 };
 
 
@@ -110,9 +76,19 @@ const Row = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   CHATBOT_EXPORTER_APP_ID: () => (/* binding */ CHATBOT_EXPORTER_APP_ID)
+/* harmony export */   CHATBOT_EXPORTER_APP_ID: () => (/* binding */ CHATBOT_EXPORTER_APP_ID),
+/* harmony export */   LlmPlatform: () => (/* binding */ LlmPlatform)
 /* harmony export */ });
 const CHATBOT_EXPORTER_APP_ID = "chatbot-exporter";
+var LlmPlatform;
+(function (LlmPlatform) {
+    LlmPlatform["default"] = "default";
+    LlmPlatform["Claude"] = "Claude";
+    LlmPlatform["ChatGPT"] = "ChatGPT";
+    LlmPlatform["Perplexity"] = "Perplexity";
+    LlmPlatform["Mita"] = "Mita";
+    LlmPlatform["JieYue"] = "JieYue";
+})(LlmPlatform || (LlmPlatform = {}));
 
 
 /***/ }),
@@ -127,7 +103,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   exportChats: () => (/* binding */ exportChats)
 /* harmony export */ });
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const */ 498);
+/* harmony import */ var _parse_document__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parse-document */ 362);
 /* harmony import */ var _cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/common-frontend/element2image */ 589);
 /* harmony import */ var _cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/common/dist/datetime/format-today */ 273);
 /* harmony import */ var _getConversationName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getConversationName */ 913);
@@ -137,44 +113,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const exportChats = ({ isDark }) => {
-    let targetElement = document.querySelector(`#${_const__WEBPACK_IMPORTED_MODULE_0__.CHATBOT_EXPORTER_APP_ID}`).previousElementSibling;
-    if ((0,_platform__WEBPACK_IMPORTED_MODULE_4__.isChatgpt)())
-        targetElement = targetElement.querySelector(
-        // 4个不行，5 个缺头部，6 个比较完整
-        ":first-child > :first-child > :first-child > :first-child > :first-child > :first-child");
-    void (0,_cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__.element2image)(targetElement, {
+const exportChats = () => {
+    const element = (0,_parse_document__WEBPACK_IMPORTED_MODULE_0__.getScreenshotAreaElement)();
+    if (!element)
+        return alert("no content to be exported");
+    console.log({ element });
+    void (0,_cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__.element2image)(element, {
         approach: (0,_platform__WEBPACK_IMPORTED_MODULE_4__.isChatgpt)() ? "html2canvas" : "modern-screenshot",
         filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__.formatToday)()} - chat - ${(0,_getConversationName__WEBPACK_IMPORTED_MODULE_3__.getConversationName)()}.jpeg`,
-        backgroundColor: isDark
-            ? "#171717" // "rgb(249, 249, 249)",
-            : "white",
     });
-};
-
-
-/***/ }),
-
-/***/ 33:
-/*!*********************************************!*\
-  !*** ./src/utils/get-input-area-element.ts ***!
-  \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getInputAreaElement: () => (/* binding */ getInputAreaElement)
-/* harmony export */ });
-/* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./platform */ 698);
-
-const getInputAreaElement = () => {
-    if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isClaude)())
-        // .parentElement.firstElementChild 在初始化问题页的时候有 bug
-        return document.querySelector(".sticky.bottom-0");
-    if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isChatgpt)())
-        return document.querySelector(".composer-parent")?.lastElementChild;
-    if ((0,_platform__WEBPACK_IMPORTED_MODULE_0__.isPerplexityAI)())
-        return document.querySelector(".bottom-mobileNavHeight");
 };
 
 
@@ -192,6 +139,56 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const getConversationName = () => {
     return document.querySelector("title").textContent;
+};
+
+
+/***/ }),
+
+/***/ 362:
+/*!*************************************!*\
+  !*** ./src/utils/parse-document.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   checkLlmPlatform: () => (/* binding */ checkLlmPlatform),
+/* harmony export */   getScreenshotAreaElement: () => (/* binding */ getScreenshotAreaElement)
+/* harmony export */ });
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const */ 498);
+
+const checkLlmPlatform = () => {
+    const url = window.location.href.toLowerCase();
+    console.log({ url });
+    if (url.startsWith("https://chatgpt.com/c/"))
+        return _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.ChatGPT;
+    if (url.startsWith("https://claude.ai/chat/"))
+        return _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.Claude;
+    if (url.startsWith("https://www.perplexity.ai/search/"))
+        return _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.Perplexity;
+    if (url.startsWith("https://metaso.cn/search/"))
+        return _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.Mita;
+    if (url.startsWith("https://yuewen.cn/chats/"))
+        return _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.JieYue;
+    return _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.default;
+};
+const getScreenshotAreaElement = () => {
+    const llmPlatform = checkLlmPlatform();
+    console.log({ llmPlatform });
+    switch (llmPlatform) {
+        case _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.Perplexity:
+            return document.querySelector(".col-span-8");
+        case _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.ChatGPT:
+            return document.querySelector(".composer-parent").firstElementChild;
+        case _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.Claude:
+            return document.querySelector(".sticky.bottom-0").previousElementSibling;
+        case _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.Mita:
+            return document.querySelector("[class*='Search_search-result__']");
+        case _const__WEBPACK_IMPORTED_MODULE_0__.LlmPlatform.JieYue:
+            return document.querySelector("[class*='message-list_inner__']");
+        default:
+            return null;
+    }
 };
 
 
