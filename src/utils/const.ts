@@ -1,4 +1,4 @@
-export const CHATBOT_EXPORTER_APP_ID = "chatbot-exporter";
+export const CHATBOT_EXPORTER_APP_ID = "exts_chrome_chatbot-exporter";
 
 export enum LlmPlatform {
   default = "default",
