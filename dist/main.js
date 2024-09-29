@@ -44,7 +44,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Entry: () => (/* binding */ Entry)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
-/* harmony import */ var _cs_magic_react_dist_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/react/dist/hooks/use-dark-mode */ 829);
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '@cs-magic/react/dist/hooks/use-dark-mode'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/shadcn/dist/lib/utils */ 422);
 /* harmony import */ var _cs_magic_shadcn_dist_ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/shadcn/dist/ui/button */ 315);
 /* harmony import */ var _cs_magic_shadcn_dist_ui_separator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @cs-magic/shadcn/dist/ui/separator */ 44);
@@ -56,7 +56,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Entry = () => {
-    const isDark = (0,_cs_magic_react_dist_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_1__.useDarkMode)();
+    const isDark = Object(function webpackMissingModule() { var e = new Error("Cannot find module '@cs-magic/react/dist/hooks/use-dark-mode'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
     const theme = isDark
         ? "bg-gray-800 text-gray-200"
         : "bg-gray-200 text-gray-800";
@@ -322,25 +322,6 @@ const element2image = async (element, { approach = "modern-screenshot", filename
     console.log("-- element2png end");
 };
 //# sourceMappingURL=element2image.js.map
-
-/***/ }),
-
-/***/ 829:
-/*!*****************************************************************!*\
-  !*** ../../packages_frontend/react/dist/hooks/use-dark-mode.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   useDarkMode: () => (/* binding */ useDarkMode)
-/* harmony export */ });
-/* harmony import */ var react_responsive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-responsive */ 231);
-
-const useDarkMode = () => (0,react_responsive__WEBPACK_IMPORTED_MODULE_0__.useMediaQuery)({
-    query: "(prefers-color-scheme: dark)",
-});
-//# sourceMappingURL=use-dark-mode.js.map
 
 /***/ }),
 
