@@ -1,4 +1,4 @@
-import { mountReactApp } from "@cs-magic/exts_chrome_claude-artifact-enhancer/src/react/bridge"; // Check for dark mode preference
+import { mountReactApp } from "@cs-magic/react/utils/mount-react-app"; // Check for dark mode preference
 import { Entry } from "./react/entry";
 
 import "../../../assets/styles/main.css";

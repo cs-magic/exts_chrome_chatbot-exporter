@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @cs-magic/exts_chrome_claude-artifact-enhancer/src/react/bridge */ 559);
+/* harmony import */ var _cs_magic_react_utils_mount_react_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @cs-magic/react/utils/mount-react-app */ 903);
 /* harmony import */ var _react_entry__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./react/entry */ 229);
 /* harmony import */ var _assets_styles_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../assets/styles/main.css */ 288);
  // Check for dark mode preference
@@ -28,7 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const element = document.createElement("div");
 document.body.appendChild(element);
-(0,_cs_magic_exts_chrome_claude_artifact_enhancer_src_react_bridge__WEBPACK_IMPORTED_MODULE_0__.mountReactApp)(element, _react_entry__WEBPACK_IMPORTED_MODULE_1__.Entry);
+(0,_cs_magic_react_utils_mount_react_app__WEBPACK_IMPORTED_MODULE_0__.mountReactApp)(element, _react_entry__WEBPACK_IMPORTED_MODULE_1__.Entry);
 
 
 /***/ }),
@@ -44,10 +44,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Entry: () => (/* binding */ Entry)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@cs-magic/react/dist/hooks/use-dark-mode'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var _cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/shadcn/dist/lib/utils */ 422);
-/* harmony import */ var _cs_magic_shadcn_dist_ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/shadcn/dist/ui/button */ 315);
-/* harmony import */ var _cs_magic_shadcn_dist_ui_separator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @cs-magic/shadcn/dist/ui/separator */ 44);
+/* harmony import */ var _cs_magic_react_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/react/hooks/use-dark-mode */ 829);
+/* harmony import */ var _cs_magic_shadcn_lib_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/shadcn/lib/utils */ 422);
+/* harmony import */ var _cs_magic_shadcn_ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/shadcn/ui/button */ 315);
+/* harmony import */ var _cs_magic_shadcn_ui_separator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @cs-magic/shadcn/ui/separator */ 44);
 /* harmony import */ var _utils_exportChats__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/exportChats */ 376);
 
 
@@ -56,13 +56,13 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 
 
 const Entry = () => {
-    const isDark = Object(function webpackMissingModule() { var e = new Error("Cannot find module '@cs-magic/react/dist/hooks/use-dark-mode'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+    const isDark = (0,_cs_magic_react_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_1__.useDarkMode)();
     const theme = isDark
         ? "bg-gray-800 text-gray-200"
         : "bg-gray-200 text-gray-800";
     // console.log("matchMedia: ", window.matchMedia);
-    const S = () => ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_dist_ui_separator__WEBPACK_IMPORTED_MODULE_4__.Separator, { orientation: "horizontal", className: (0,_cs_magic_shadcn_dist_lib_utils__WEBPACK_IMPORTED_MODULE_2__.cn)("grow w-auto bg-gray-900 ", theme) }));
-    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_dist_ui_button__WEBPACK_IMPORTED_MODULE_3__.Button, { onClick: _utils_exportChats__WEBPACK_IMPORTED_MODULE_5__.exportChats, className: "fixed bottom-1/2 right-2 sm:right-4", children: "Export" }));
+    const S = () => ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_ui_separator__WEBPACK_IMPORTED_MODULE_4__.Separator, { orientation: "horizontal", className: (0,_cs_magic_shadcn_lib_utils__WEBPACK_IMPORTED_MODULE_2__.cn)("grow w-auto bg-gray-900 ", theme) }));
+    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_ui_button__WEBPACK_IMPORTED_MODULE_3__.Button, { onClick: _utils_exportChats__WEBPACK_IMPORTED_MODULE_5__.exportChats, className: "fixed bottom-1/2 right-2 sm:right-4", children: "Export" }));
 };
 
 
@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _parse_document__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parse-document */ 362);
 /* harmony import */ var _cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/common-frontend/element2image */ 589);
-/* harmony import */ var _cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/common/dist/datetime/format-today */ 273);
+/* harmony import */ var _cs_magic_common_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/common/datetime/format-today */ 273);
 /* harmony import */ var _getConversationName__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getConversationName */ 913);
 /* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./platform */ 698);
 
@@ -120,7 +120,7 @@ const exportChats = () => {
     console.log({ element });
     void (0,_cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__.element2image)(element, {
         approach: (0,_platform__WEBPACK_IMPORTED_MODULE_4__.isChatgpt)() ? "html2canvas" : "modern-screenshot",
-        filename: `${(0,_cs_magic_common_dist_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__.formatToday)()} - chat - ${(0,_getConversationName__WEBPACK_IMPORTED_MODULE_3__.getConversationName)()}.jpeg`,
+        filename: `${(0,_cs_magic_common_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__.formatToday)()} - chat - ${(0,_getConversationName__WEBPACK_IMPORTED_MODULE_3__.getConversationName)()}.jpeg`,
     });
 };
 
@@ -213,31 +213,6 @@ const isPerplexityAI = () => window.origin.includes("perplexity.ai");
 
 /***/ }),
 
-/***/ 559:
-/*!********************************************************!*\
-  !*** ../claude-artifact-enhancer/src/react/bridge.tsx ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   mountReactApp: () => (/* binding */ mountReactApp)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ 873);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ 41);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const mountReactApp = (container, ReactElement) => {
-    const root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(container);
-    root.render((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)((react__WEBPACK_IMPORTED_MODULE_2___default().StrictMode), { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(ReactElement, {}) }));
-};
-
-
-/***/ }),
-
 /***/ 589:
 /*!************************************************************!*\
   !*** ../../packages_frontend/common/dist/element2image.js ***!
@@ -322,6 +297,50 @@ const element2image = async (element, { approach = "modern-screenshot", filename
     console.log("-- element2png end");
 };
 //# sourceMappingURL=element2image.js.map
+
+/***/ }),
+
+/***/ 829:
+/*!*****************************************************************!*\
+  !*** ../../packages_frontend/react/dist/hooks/use-dark-mode.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useDarkMode: () => (/* binding */ useDarkMode)
+/* harmony export */ });
+/* harmony import */ var react_responsive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-responsive */ 231);
+
+const useDarkMode = () => (0,react_responsive__WEBPACK_IMPORTED_MODULE_0__.useMediaQuery)({
+    query: "(prefers-color-scheme: dark)",
+});
+//# sourceMappingURL=use-dark-mode.js.map
+
+/***/ }),
+
+/***/ 903:
+/*!*******************************************************************!*\
+  !*** ../../packages_frontend/react/dist/utils/mount-react-app.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   mountReactApp: () => (/* binding */ mountReactApp)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ 873);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ 41);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const mountReactApp = (container, ReactElement) => {
+    const root = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(container);
+    root.render((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)((react__WEBPACK_IMPORTED_MODULE_2___default().StrictMode), { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(ReactElement, {}) }));
+};
+//# sourceMappingURL=mount-react-app.js.map
 
 /***/ }),
 

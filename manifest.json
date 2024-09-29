@@ -1,6 +1,6 @@
 {
   "name": "chatbot-exporter",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "manifest_version": 3,
   "description": "Your Helpful Chatbot Exporter",
   "author": "南川 <mark@cs-magic.com>",
@@ -29,6 +29,5 @@
     }
   ],
   "permissions": [
-    "activeTab"
   ]
 }

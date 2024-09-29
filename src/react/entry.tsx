@@ -1,9 +1,9 @@
-import { useDarkMode } from "@cs-magic/react/dist/hooks/use-dark-mode";
-import { cn } from "@cs-magic/shadcn/dist/lib/utils";
-import { Button } from "@cs-magic/shadcn/dist/ui/button";
-import { Separator } from "@cs-magic/shadcn/dist/ui/separator";
+import { useDarkMode } from "@cs-magic/react/hooks/use-dark-mode";
+import { cn } from "@cs-magic/shadcn/lib/utils";
+import { Button } from "@cs-magic/shadcn/ui/button";
+import { Separator } from "@cs-magic/shadcn/ui/separator";
 import React from "react";
-import { exportChats } from "../utils/exportChats";
+import { exportChats } from "@/utils/exportChats";
 
 export const Entry = () => {
   const isDark = useDarkMode();

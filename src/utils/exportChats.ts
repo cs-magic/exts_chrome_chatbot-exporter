@@ -1,6 +1,6 @@
 import { getScreenshotAreaElement } from "@/utils/parse-document";
 import { element2image } from "@cs-magic/common-frontend/element2image";
-import { formatToday } from "@cs-magic/common/dist/datetime/format-today";
+import { formatToday } from "@cs-magic/common/datetime/format-today";
 import { getConversationName } from "./getConversationName";
 import { isChatgpt } from "./platform";
 
