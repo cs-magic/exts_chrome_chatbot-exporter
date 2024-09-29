@@ -28,7 +28,10 @@ jobs:
       - name: Set release name
         id: release_name
         run: |
-          echo "name=${{ steps.package_info.outputs.name }}_v${{ steps.package_info.outputs.version }}_${{ steps.package_info.outputs.type }}_$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          RELEASE_VERSION=v${{ steps.package_info.outputs.version }}_${{ steps.package_info.outputs.type }}_$(date +'%Y-%m-%d')
+          echo "version=$RELEASE_VERSION" >> $GITHUB_OUTPUT
+          RELEASE_NAME=${{ steps.package_info.outputs.name }}_$RELEASE_VERSION
+          echo "name=$RELEASE_NAME" >> $GITHUB_OUTPUT
           echo "zip_name=$RELEASE_NAME.zip" >> $GITHUB_OUTPUT
 
       - name: Zip Extension
@@ -43,7 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: ${{ steps.release_name.outputs.name }}
+          release_name: ${{ steps.release_name.outputs.version }}
           draft: false
           prerelease: false # ${{ steps.package_info.outputs.type != 'stable' }}
 
@@ -54,5 +57,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./${{ steps.release_name.outputs.zip_name }}
-          asset_name: ${{ steps.release_name.outputs.name }}.zip
+          asset_name: ${{ steps.release_name.outputs.zip_name }}
           asset_content_type: application/zip
