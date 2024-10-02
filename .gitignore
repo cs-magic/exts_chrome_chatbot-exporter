@@ -1,6 +1,5 @@
-release/*
+dist
 
-# we should include the dist for end-side users
-!dist
+release/*
 
 .DS_Store
