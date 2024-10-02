@@ -1,9 +1,7 @@
+import { useExportChats } from "@/utils/use-export-chats";
 import { useDarkMode } from "@cs-magic/react/hooks/use-dark-mode";
-import { cn } from "@cs-magic/shadcn/lib/utils";
 import { Button } from "@cs-magic/shadcn/ui/button";
-import { Separator } from "@cs-magic/shadcn/ui/separator";
 import React from "react";
-import { exportChats } from "@/utils/exportChats";
 
 export const Entry = () => {
   const isDark = useDarkMode();
@@ -12,13 +10,7 @@ export const Entry = () => {
     : "bg-gray-200 text-gray-800";
 
   // console.log("matchMedia: ", window.matchMedia);
-
-  const S = () => (
-    <Separator
-      orientation={"horizontal"}
-      className={cn("grow w-auto bg-gray-900 ", theme)}
-    />
-  );
+  const exportChats = useExportChats();
 
   return (
     <Button
