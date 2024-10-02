@@ -1,7 +1,59 @@
 "use strict";
 (self["webpackChunk_cs_magic_exts_chrome_chatbot_exporter"] = self["webpackChunk_cs_magic_exts_chrome_chatbot_exporter"] || []).push([["main"],{
 
-/***/ 288:
+/***/ 3960:
+/*!*************************!*\
+  !*** ./assets/logo.svg ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ 4041);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _circle, _circle2, _circle3;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+
+var SvgLogo = function SvgLogo(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 128 128"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 6,
+    d: "M32 48h64a16 16 0 0 1 0 32H32a16 16 0 0 1 0-32"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "none",
+    stroke: "currentColor",
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 6,
+    d: "M64 80v24l8-8"
+  })), _circle || (_circle = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("circle", {
+    cx: 48,
+    cy: 64,
+    r: 4,
+    fill: "currentColor"
+  })), _circle2 || (_circle2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("circle", {
+    cx: 64,
+    cy: 64,
+    r: 4,
+    fill: "currentColor"
+  })), _circle3 || (_circle3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("circle", {
+    cx: 80,
+    cy: 64,
+    r: 4,
+    fill: "currentColor"
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SvgLogo);
+
+/***/ }),
+
+/***/ 4288:
 /*!************************************!*\
   !*** ../../assets/styles/main.css ***!
   \************************************/
@@ -13,7 +65,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 461:
+/***/ 3461:
 /*!***********************!*\
   !*** ./src/config.ts ***!
   \***********************/
@@ -28,17 +80,17 @@ const APP_ID = "chatbot-exporter";
 
 /***/ }),
 
-/***/ 682:
+/***/ 8682:
 /*!*********************!*\
   !*** ./src/main.ts ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ 461);
-/* harmony import */ var _cs_magic_react_utils_mount_react_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/react/utils/mount-react-app */ 687);
-/* harmony import */ var _react_entry__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./react/entry */ 229);
-/* harmony import */ var _assets_styles_main_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../assets/styles/main.css */ 288);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./config */ 3461);
+/* harmony import */ var _cs_magic_react_utils_mount_react_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/react/utils/mount-react-app */ 3687);
+/* harmony import */ var _react_entry__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./react/entry */ 8229);
+/* harmony import */ var _assets_styles_main_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../assets/styles/main.css */ 4288);
 
  // Check for dark mode preference
 
@@ -51,7 +103,7 @@ document.body.appendChild(element);
 
 /***/ }),
 
-/***/ 229:
+/***/ 8229:
 /*!*****************************!*\
   !*** ./src/react/entry.tsx ***!
   \*****************************/
@@ -61,28 +113,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Entry: () => (/* binding */ Entry)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
-/* harmony import */ var _utils_use_export_chats__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/use-export-chats */ 996);
-/* harmony import */ var _cs_magic_react_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/react/hooks/use-dark-mode */ 805);
-/* harmony import */ var _cs_magic_shadcn_ui_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/shadcn/ui/button */ 953);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 1085);
+/* harmony import */ var _utils_use_export_chats__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/use-export-chats */ 4615);
+/* harmony import */ var _cs_magic_shadcn_ui_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/shadcn/ui/button */ 7953);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ 4041);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_draggable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-draggable */ 9463);
+/* harmony import */ var react_draggable__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_draggable__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assets_logo_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/logo.svg */ 3960);
+
+
 
 
 
 
 const Entry = () => {
-    const isDark = (0,_cs_magic_react_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_2__.useDarkMode)();
-    const theme = isDark
-        ? "bg-gray-800 text-gray-200"
-        : "bg-gray-200 text-gray-800";
-    // console.log("matchMedia: ", window.matchMedia);
+    const [dragging, setDragging] = react__WEBPACK_IMPORTED_MODULE_3___default().useState(false);
     const exportChats = (0,_utils_use_export_chats__WEBPACK_IMPORTED_MODULE_1__.useExportChats)();
-    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_ui_button__WEBPACK_IMPORTED_MODULE_3__.Button, { onClick: exportChats, className: "fixed bottom-1/2 right-2 sm:right-4", children: "Export" }));
+    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)((react_draggable__WEBPACK_IMPORTED_MODULE_4___default()), { axis: "y", onDrag: () => {
+            // console.log("== drag");
+            setDragging(true);
+        }, onStop: () => {
+            if (!dragging) {
+                // onClick
+                exportChats();
+            }
+            setDragging(false);
+            // console.log("== drag end");
+        }, children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_cs_magic_shadcn_ui_button__WEBPACK_IMPORTED_MODULE_2__.Button, { size: "sm", className: "fixed top-1/3 right-0 z-[9999] !rounded-l-full bg-indigo-500/50 hover:bg-indigo-500 text-white !w-12 !h-8", children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_assets_logo_svg__WEBPACK_IMPORTED_MODULE_5__["default"], { width: 32 }) }) }));
 };
 
 
 /***/ }),
 
-/***/ 498:
+/***/ 6498:
 /*!****************************!*\
   !*** ./src/utils/const.ts ***!
   \****************************/
@@ -107,7 +171,7 @@ var LlmPlatform;
 
 /***/ }),
 
-/***/ 913:
+/***/ 3913:
 /*!******************************************!*\
   !*** ./src/utils/getConversationName.ts ***!
   \******************************************/
@@ -124,7 +188,7 @@ const getConversationName = () => {
 
 /***/ }),
 
-/***/ 362:
+/***/ 2362:
 /*!*************************************!*\
   !*** ./src/utils/parse-document.ts ***!
   \*************************************/
@@ -135,7 +199,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   checkLlmPlatform: () => (/* binding */ checkLlmPlatform),
 /* harmony export */   getScreenshotAreaElement: () => (/* binding */ getScreenshotAreaElement)
 /* harmony export */ });
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const */ 498);
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const */ 6498);
 
 const checkLlmPlatform = () => {
     const url = window.location.href.toLowerCase();
@@ -174,7 +238,7 @@ const getScreenshotAreaElement = () => {
 
 /***/ }),
 
-/***/ 698:
+/***/ 6698:
 /*!*******************************!*\
   !*** ./src/utils/platform.ts ***!
   \*******************************/
@@ -193,7 +257,7 @@ const isPerplexityAI = () => window.origin.includes("perplexity.ai");
 
 /***/ }),
 
-/***/ 996:
+/***/ 4615:
 /*!***************************************!*\
   !*** ./src/utils/use-export-chats.ts ***!
   \***************************************/
@@ -203,12 +267,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   useExportChats: () => (/* binding */ useExportChats)
 /* harmony export */ });
-/* harmony import */ var _parse_document__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parse-document */ 362);
-/* harmony import */ var _cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/common-frontend/element2image */ 275);
+/* harmony import */ var _parse_document__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./parse-document */ 2362);
+/* harmony import */ var _cs_magic_common_frontend_element2image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @cs-magic/common-frontend/element2image */ 2275);
 /* harmony import */ var _cs_magic_common_datetime_format_today__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @cs-magic/common/datetime/format-today */ 273);
-/* harmony import */ var _cs_magic_react_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/react/hooks/use-dark-mode */ 805);
-/* harmony import */ var _getConversationName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./getConversationName */ 913);
-/* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./platform */ 698);
+/* harmony import */ var _cs_magic_react_hooks_use_dark_mode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @cs-magic/react/hooks/use-dark-mode */ 4805);
+/* harmony import */ var _getConversationName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./getConversationName */ 3913);
+/* harmony import */ var _platform__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./platform */ 6698);
 
 
 
@@ -233,7 +297,7 @@ const useExportChats = () => {
 
 /***/ }),
 
-/***/ 275:
+/***/ 2275:
 /*!************************************************************!*\
   !*** ../../packages/frontend-common/dist/element2image.js ***!
   \************************************************************/
@@ -244,9 +308,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   element2image: () => (/* binding */ element2image),
 /* harmony export */   svgElement2svgString: () => (/* binding */ svgElement2svgString)
 /* harmony export */ });
-/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! html2canvas */ 317);
+/* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! html2canvas */ 8317);
 /* harmony import */ var html2canvas__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(html2canvas__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var modern_screenshot__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! modern-screenshot */ 615);
+/* harmony import */ var modern_screenshot__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! modern-screenshot */ 7615);
 
  // Function to get the maximum width based on viewport
 const svgElement2svgString = (svg) => new XMLSerializer().serializeToString(svg);
@@ -320,7 +384,7 @@ const element2image = async (element, { approach = "modern-screenshot", filename
 
 /***/ }),
 
-/***/ 419:
+/***/ 8419:
 /*!********************************************************!*\
   !*** ../../packages/frontend-shadcn/dist/lib/utils.js ***!
   \********************************************************/
@@ -330,8 +394,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   cn: () => (/* binding */ cn)
 /* harmony export */ });
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ 357);
-/* harmony import */ var tailwind_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tailwind-merge */ 73);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ 4357);
+/* harmony import */ var tailwind_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tailwind-merge */ 9073);
 
 
 function cn(...inputs) {
@@ -341,7 +405,7 @@ function cn(...inputs) {
 
 /***/ }),
 
-/***/ 953:
+/***/ 7953:
 /*!********************************************************!*\
   !*** ../../packages/frontend-shadcn/dist/ui/button.js ***!
   \********************************************************/
@@ -352,12 +416,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Button: () => (/* binding */ Button),
 /* harmony export */   buttonVariants: () => (/* binding */ buttonVariants)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 1085);
 /* harmony import */ var _radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @radix-ui/react-slot */ 45);
-/* harmony import */ var class_variance_authority__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! class-variance-authority */ 699);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ 41);
+/* harmony import */ var class_variance_authority__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! class-variance-authority */ 5699);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ 4041);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/utils */ 419);
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/utils */ 8419);
 
 
 
@@ -395,7 +459,7 @@ Button.displayName = "Button";
 
 /***/ }),
 
-/***/ 805:
+/***/ 4805:
 /*!***********************************************************!*\
   !*** ../../packages/frontend/dist/hooks/use-dark-mode.js ***!
   \***********************************************************/
@@ -405,7 +469,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   useDarkMode: () => (/* binding */ useDarkMode)
 /* harmony export */ });
-/* harmony import */ var react_responsive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-responsive */ 231);
+/* harmony import */ var react_responsive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-responsive */ 5231);
 
 const useDarkMode = () => (0,react_responsive__WEBPACK_IMPORTED_MODULE_0__.useMediaQuery)({
     query: "(prefers-color-scheme: dark)",
@@ -414,7 +478,7 @@ const useDarkMode = () => (0,react_responsive__WEBPACK_IMPORTED_MODULE_0__.useMe
 
 /***/ }),
 
-/***/ 687:
+/***/ 3687:
 /*!*************************************************************!*\
   !*** ../../packages/frontend/dist/utils/mount-react-app.js ***!
   \*************************************************************/
@@ -424,9 +488,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   mountReactApp: () => (/* binding */ mountReactApp)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 85);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ 873);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ 41);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ 1085);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ 5873);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ 4041);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 
 
@@ -460,7 +524,7 @@ const formatToday = (format = "YYYY-mm-dd") => {
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendors"], () => (__webpack_exec__(682)));
+/******/ __webpack_require__.O(0, ["vendors"], () => (__webpack_exec__(8682)));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

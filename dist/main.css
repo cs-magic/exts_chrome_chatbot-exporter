@@ -852,10 +852,6 @@ body {
   bottom: 0px;
 }
 
-.bottom-1\/2 {
-  bottom: 50%;
-}
-
 .left-0 {
   left: 0px;
 }
@@ -898,6 +894,10 @@ body {
 
 .top-1\/2 {
   top: 50%;
+}
+
+.top-1\/3 {
+  top: 33.333333%;
 }
 
 .top-2 {
@@ -1141,6 +1141,10 @@ body {
   height: 1px;
 }
 
+.\!h-8 {
+  height: 2rem !important;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1256,6 +1260,14 @@ body {
 
 .w-px {
   width: 1px;
+}
+
+.\!w-8 {
+  width: 2rem !important;
+}
+
+.\!w-12 {
+  width: 3rem !important;
 }
 
 .min-w-0 {
@@ -1557,6 +1569,11 @@ body {
   border-radius: calc(var(--radius) - 4px);
 }
 
+.\!rounded-l-full {
+  border-top-left-radius: 9999px !important;
+  border-bottom-left-radius: 9999px !important;
+}
+
 .rounded-t-\[10px\] {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -1693,21 +1710,6 @@ body {
   background-color: hsl(var(--foreground));
 }
 
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.bg-gray-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
-}
-
 .bg-muted {
   background-color: hsl(var(--muted));
 }
@@ -1735,6 +1737,15 @@ body {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
+}
+
+.bg-indigo-500\/50 {
+  background-color: rgb(99 102 241 / 0.5);
 }
 
 .fill-current {
@@ -2002,19 +2013,9 @@ body {
   color: hsl(var(--foreground) / 0.5);
 }
 
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
-}
-
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
-}
-
-.text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .text-green-500 {
@@ -2544,6 +2545,11 @@ body {
 
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
+}
+
+.hover\:bg-indigo-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(99 102 241 / var(--tw-bg-opacity));
 }
 
 .hover\:text-accent-foreground:hover {

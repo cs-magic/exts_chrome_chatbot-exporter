@@ -6,6 +6,10 @@
     "build": "webpack --node-env production"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "webpack": "^5.94.0"
+  },
+  "dependencies": {
+    "react-draggable": "^4.4.6"
   }
 }
