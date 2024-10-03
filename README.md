@@ -19,11 +19,11 @@
 4. **use**:
    1. you should be able to find the button just on the 1/3 right of page, like:
 
-   ![img.png](img.png)
+   ![img.png](docs/button-v3.png)
 
    2. you can drag the button vertically, and if you click the button, you would have a file downloaded into your default folder like `Downloads`.
 
-     ![img.png](docs/downloaded.png)
+   ![exported.png](docs/exported.png)
 
 ## Motivation
 
