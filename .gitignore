@@ -1,4 +1,5 @@
-dist
+# todo: yarn build in Github
+!dist
 
 release/*
 
