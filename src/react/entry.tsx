@@ -2,7 +2,7 @@ import { useExportChats } from "@/utils/use-export-chats";
 import { Button } from "@cs-magic/shadcn/ui/button";
 import React from "react";
 import ReactDraggable from "react-draggable";
-import LogoSVG from "../../assets/logo.svg";
+import LogoSVG from "assets/logo.svg";
 
 export const Entry = () => {
   const [dragging, setDragging] = React.useState(false);

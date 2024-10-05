@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="./assets/logo.svg" alt="logo" width="128" height="128">
+  <img src="assets/logo.svg" alt="logo" width="128" height="128">
   <h1>Chatbot Exporter</h1>
   <blockquote>Share your favorite chat messages in 1 second. </blockquote>
 </div>

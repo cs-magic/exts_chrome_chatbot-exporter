@@ -1,9 +1,9 @@
 import { getScreenshotAreaElement } from "@/utils/parse-document";
-import { element2image } from "@cs-magic/common-frontend/element2image";
+import { element2image } from "@cs-magic/common-frontend/dist/element2image";
 import { formatToday } from "@cs-magic/common/datetime/format-today";
 import { useDarkMode } from "@cs-magic/react/hooks/use-dark-mode";
-import { getConversationName } from "./getConversationName";
-import { isChatgpt } from "./platform";
+import { getConversationName } from "src/utils/getConversationName";
+import { isChatgpt } from "src/utils/platform";
 
 export const useExportChats = () => {
   const backgroundColor = useDarkMode() ? "#21211E" : "white";

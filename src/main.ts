@@ -1,8 +1,8 @@
 import { APP_ID } from "@/config";
 import { mountReactApp } from "@cs-magic/react/utils/mount-react-app"; // Check for dark mode preference
-import { Entry } from "./react/entry";
+import { Entry } from "src/react/entry";
 
-import "../../../assets/styles/main.css";
+import "assets/styles/main.css";
 
 console.log(APP_ID, "init...");
 const element = document.createElement("div");
