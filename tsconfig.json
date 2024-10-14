@@ -1,6 +1,6 @@
 {
   "extends": [
-    "../../tsconfig.dom.json"
+    "../../../../tsconfig.dom.json"
   ],
   "compilerOptions": {
 //    不需要使用 tsc 编译，直接webpack（可以处理ts）
@@ -11,6 +11,9 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@assets/*": [
+        "../../../../assets/*"
       ]
     },
     "lib": ["es2015", "dom",  "dom.iterable"],

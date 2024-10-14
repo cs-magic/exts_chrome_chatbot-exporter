@@ -11,6 +11,7 @@ baseConfig.entry = {
 
 baseConfig.resolve.alias = {
   "@": resolve("src"),
+  "@assets": resolve("../../../../assets"),
 };
 
 baseConfig.plugins.push(
