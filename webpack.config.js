@@ -1,6 +1,6 @@
 const CopyPlugin = require("copy-webpack-plugin");
 
-const baseConfig = require("@cs-magic/webpack/webpack.base.config");
+const baseConfig = require("@cs-magic/webpack-config/presets/webpack.chrome");
 
 // eslint-disable-next-line @typescript-eslint/unbound-method
 const { resolve } = require("path");
