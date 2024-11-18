@@ -1,0 +1,8 @@
+
+CLI for webpack must be installed.
+  webpack-cli (https://github.com/webpack/webpack-cli)
+
+We will use "npm" to install the CLI via "npm install -D webpack-cli".
+[1G[0JDo you want to install 'webpack-cli' (yes/no): [48G
+You need to install 'webpack-cli' to use webpack via CLI.
+You can also install the CLI manually.
